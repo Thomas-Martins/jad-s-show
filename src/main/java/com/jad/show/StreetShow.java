@@ -10,7 +10,7 @@ import com.jad.customer.IVisitor;
 public class StreetShow extends Show {
     private final ArrayList<String> performers = new ArrayList<>();
 
-    public StreetShow(final String name, final String description, final String... performers) {
+    StreetShow(final String name, final String description, final String... performers) {
         super(name, description, ShowType.STREET_SHOW);
         this.performers.addAll(Arrays.asList(performers));
     }

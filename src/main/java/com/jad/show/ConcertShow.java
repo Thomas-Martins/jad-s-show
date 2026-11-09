@@ -1,5 +1,7 @@
 package com.jad.show;
 
+import com.jad.customer.IVisitor;
+
 public class ConcertShow extends Show {
     private final String artist;
 
@@ -10,5 +12,10 @@ public class ConcertShow extends Show {
 
     public String getArtist() {
         return this.artist;
+    }
+
+    @Override
+    public void accept(IVisitor visitor) {
+        visitor.handleConcertShow(this);
     }
 }

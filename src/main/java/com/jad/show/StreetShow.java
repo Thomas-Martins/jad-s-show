@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import com.jad.customer.IVisitor;
+
 public class StreetShow extends Show {
     private final ArrayList<String> performers = new ArrayList<>();
 
@@ -15,5 +17,10 @@ public class StreetShow extends Show {
 
     public List<String> getPerformers() {
         return Collections.unmodifiableList(this.performers);
+    }
+
+    @Override
+    public void accept(IVisitor visitor) {
+        visitor.handleStreetShow(this);
     }
 }

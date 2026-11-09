@@ -1,5 +1,7 @@
 package com.jad.show;
 
+import com.jad.customer.IVisitor;
+
 public class MovieShow extends Show {
     private final String director;
     private final String yearOfRelease;
@@ -22,5 +24,10 @@ public class MovieShow extends Show {
 
     public MovieType getMovieType() {
         return this.movieType;
+    }
+
+    @Override
+    public void accept(IVisitor visitor) {
+        visitor.handleMovieShow(this);
     }
 }
